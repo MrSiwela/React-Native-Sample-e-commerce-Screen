@@ -21,6 +21,7 @@ export const ItemList = ()=>{
     return(
         <View style={styles.container}>
             <FlatList
+            style={{height: SCREEN_HEIGHT/2}}
                 data={ITEMS}
                 horizontal
                 showsHorizontalScrollIndicator={false}
@@ -60,8 +61,8 @@ export const ItemList = ()=>{
                             <View style={{position: 'absolute',left: 10,width: 100,height: 150,backgroundColor: 'pink'}}>
                             {ITEMS.map((discountItem,i)=>{
                                                 return(
-                                                    <Animated.View key={item.key} style={{width: 150,height: 150,transform: [{rotateZ: '-90deg'},{translateX}]}}>
-                                                        <Text style={{fontSize: 80,fontWeight: 'bold',textAlign: 'center'}}>{discountItem.discount}</Text>
+                                                    <Animated.View key={i} style={{width: 150,height: 150,transform: [{rotateZ: '-90deg'},{translateX}]}}>
+                                                        <Text key={{item}} style={{fontSize: 80,fontWeight: 'bold',textAlign: 'center'}}>{discountItem.discount}</Text>
                                                     </Animated.View>    
                                                 )
                                             })}
